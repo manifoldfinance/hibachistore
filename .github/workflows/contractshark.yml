@@ -1,6 +1,6 @@
 # contractshark workflow pipeline
 #  spdx-license-identifier: ISC
-#  v0.2.0
+#  v0.2.2
 name: contractshark
 
 on: [push, pull_request]
@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
-        node-version: ['12.x']
+        node: ['12.x']
+        os: [ubuntu-latest, windows-latest]
         test_number:
           - 1
           - 2
@@ -34,16 +36,16 @@ jobs:
       - name: Coveralls Parallel
         uses: coverallsapp/github-action@master
         with:
-         github-token: ${{ secrets.github_token }}
+         github-token: ${{ secrets.GITHUB_TOKEN }
          flag-name: run-${{ matrix.test_number }}
          parallel: true
 
   finish:
-    needs: Test
-    runs-on: ubuntu-latest
-    steps:
-    - name: Coveralls Finished
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.github_token }}
-        parallel-finished: true
+  #   needs: test 1, test 2
+     runs-on: ubuntu-latest
+     steps:
+     - name: Coveralls Finished
+       uses: coverallsapp/github-action@master
+       with:
+         github-token: ${{ secrets.GITHUB_TOKEN }
+         parallel-finished: true
