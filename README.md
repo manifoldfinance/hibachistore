@@ -1,4 +1,4 @@
-# `Solidity Truffle Boilerplate`
+# `Hibachi Store`
 
   </p>
 </p>

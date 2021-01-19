@@ -1,12 +1,13 @@
 {
-    "name": "development-boilerplate",
+    "name": "@manifoldfinance/hibachi",
     "version": "0.0.1",
-    "description": "development",
+    "private": "true",
+    "description": "SushiSwap's Hibachi Store featuring a King Roll Sampler",
     "repository": {
         "type": "git",
-        "url": "git@github.com:$USER/$REPO"
+        "url": "git@github.com:manifoldfinance/hibachiroll"
     },
-    "license": "MIT",
+    "license": "SEE LICENSE IN LICENSE",
     "dependencies": {
         "@openzeppelin/contracts": "^2.5.1"
     },
