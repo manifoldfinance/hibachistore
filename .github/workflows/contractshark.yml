@@ -39,7 +39,7 @@ jobs:
          parallel: true
 
   finish:
-    needs: Test ${{ matrix.test_number }}
+    needs: Test
     runs-on: ubuntu-latest
     steps:
     - name: Coveralls Finished
