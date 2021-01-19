@@ -48,5 +48,3 @@ $ NETWORK=kovan yarn run verify YourContractName
 ## License
 
 SPDX-License-Identifier: MIT/ISC
-
-
