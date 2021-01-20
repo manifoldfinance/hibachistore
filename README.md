@@ -1,13 +1,10 @@
+# Hibachi Store
+ 
+ 
+[🍣 SushiSwap Governance Preliminary Discussion and Proposal](https://forum.sushiswapclassic.org/t/hibachi-store-lottery-based-arbitrage-payouts-for-incentivizing-lps-and-volume/2020)
 
-  </p>
-  <center>
-  <h1> Hibachi Store </h1>
-  </center>
-</p>
-<br />
-<br />
 
-##  Hibachi Store: Propposal for SushiSwap 🍣  
+##  Hibachi Store: Propposal for SushiSwap   
 
 Contract source code has not been published in its entirety!  
 
