@@ -9,6 +9,7 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
+    "@alch/alchemy-web3": "^0.1.18",
     "@openzeppelin/contracts": "^2.5.1"
   },
   "devDependencies": {
