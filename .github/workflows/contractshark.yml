@@ -1,6 +1,6 @@
 # contractshark workflow pipeline
 #  spdx-license-identifier: ISC
-#  v0.2.0
+#  v0.2.2
 name: contractshark
 
 on: [push, pull_request]
@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
-        node-version: ['12.x']
-        test_number:
-          - 1
-          - 2
+        node: ['12.x']
+        os: ['ubuntu-latest']
+
 
     steps:
       - uses: actions/checkout@v2
@@ -29,21 +29,7 @@ jobs:
           npm install -g ganache-cli
           yarn install
 
-      - name: Test ${{ matrix.test_number }}
-        run: make test-coverage-${{ matrix.test_number }}
-      - name: Coveralls Parallel
+      - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
-         github-token: ${{ secrets.github_token }}
-         flag-name: run-${{ matrix.test_number }}
-         parallel: true
-
-  finish:
-    needs: Test ${{ matrix.test_number }}
-    runs-on: ubuntu-latest
-    steps:
-    - name: Coveralls Finished
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.github_token }}
-        parallel-finished: true
+         github-token: ${{ secrets.GITHUB_TOKEN }}
