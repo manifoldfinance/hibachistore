@@ -1,6 +1,6 @@
 {
   "name": "@manifoldfinance/hibachi",
-  "version": "0.0.1",
+  "version": "0.3.0",
   "private": "true",
   "description": "SushiSwap's Hibachi Store featuring a King Roll Sampler",
   "repository": {
