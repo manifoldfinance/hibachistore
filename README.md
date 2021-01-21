@@ -1,13 +1,10 @@
 # Hibachi Store
- 
- 
+
 [🍣 SushiSwap Governance Preliminary Discussion and Proposal](https://forum.sushiswapclassic.org/t/hibachi-store-lottery-based-arbitrage-payouts-for-incentivizing-lps-and-volume/2020)
 
+## Hibachi Store: Propposal for SushiSwap
 
-##  Hibachi Store: Propposal for SushiSwap   
-
-Contract source code has not been published in its entirety!  
-
+Contract source code has not been published in its entirety!
 
 ## Developer Tools 🛠️
 
@@ -15,21 +12,19 @@ Contract source code has not been published in its entirety!
 - [TypeChain](https://github.com/ethereum-ts/TypeChain)
 - [Openzeppelin Contracts](https://openzeppelin.com/contracts/)
 
-
 ### Tests 🔮
 
 ```bash
 $ yarn test
 ```
 
-### Coverage  🧰
+### Coverage 🧰
 
 ```bash
 $ yarn coverage
 ```
 
-
-### Deploying  🛫
+### Deploying 🛫
 
 Deploy to Kovan:
 

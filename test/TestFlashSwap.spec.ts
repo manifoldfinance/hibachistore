@@ -30,7 +30,7 @@ describe("TestFlashSwapArbitrage", () => {
   let WETHExchangeV1: Contract;
   let WETHPair: Contract;
   let flashSwapExample: Contract;
-  beforeEach(async function() {
+  beforeEach(async function () {
     const fixture = await loadFixture(v2Fixture);
 
     WETH = fixture.WETH;
