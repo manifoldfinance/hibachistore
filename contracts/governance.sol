@@ -1,6 +1,6 @@
 pragma solidity ^0.6.2;
 
-import {DSMath} from "./libraries/DSMath.sol";
+import { DSMath } from "./libraries/DSMath.sol";
 
 contract GovernanceData is DSMath {
     address public admin;
@@ -8,10 +8,10 @@ contract GovernanceData is DSMath {
     address public hibachiStore;
     address public randomness;
 
-    uint public fee;
-    uint public hibachiPrice;
-    uint public profitShare;
-    uint public kingrollDuration;
+    uint256 public fee;
+    uint256 public hibachiPrice;
+    uint256 public profitShare;
+    uint256 public kingrollDuration;
 
     address public lendingProxy;
     address public kingrollSwap;
@@ -22,17 +22,17 @@ contract GovernanceData is DSMath {
         _;
     }
 
-    function changeFee(uint _fee) external isAdmin {
-        require(_fee < 5 * 10 ** 15, "governance/over-fee"); // 0.5% Max Fee.
+    function changeFee(uint256 _fee) external isAdmin {
+        require(_fee < 5 * 10**15, "governance/over-fee"); // 0.5% Max Fee.
         fee = _fee;
     }
 
-    function changeCandyPrice(uint _price) external isAdmin {
+    function changeCandyPrice(uint256 _price) external isAdmin {
         require(_price < 1 * WAD, "governance/over-price"); // 1$ Max Price.
         hibachiPrice = _price;
     }
 
-    function changeDuration(uint _time) external isAdmin {
+    function changeDuration(uint256 _time) external isAdmin {
         require(_time <= 30 days, "governance/over-price"); // 30 days Max duration
         // require(_time >= 7 days, "governance/over-price"); // 7 days min duration
         kingrollDuration = _time;
@@ -70,11 +70,11 @@ contract GovernanceData is DSMath {
 }
 
 contract Governance is GovernanceData {
-    constructor (
+    constructor(
         address _admin,
-        uint _fee,
-        uint _hibachiPrice,
-        uint _duration,
+        uint256 _fee,
+        uint256 _hibachiPrice,
+        uint256 _duration,
         address _lendingProxy
     ) public {
         assert(_admin != address(0));
@@ -87,10 +87,13 @@ contract Governance is GovernanceData {
         hibachiPrice = _hibachiPrice;
         kingrollDuration = _duration;
         lendingProxy = _lendingProxy;
-        
     }
 
-    function init(address _hibachiStore, address _randomness, address _swap) public isAdmin {
+    function init(
+        address _hibachiStore,
+        address _randomness,
+        address _swap
+    ) public isAdmin {
         require(_randomness != address(0), "governance/no-randomnesss-address");
         require(_hibachiStore != address(0));
         require(_swap != address(0), "governance/no-swapLottery-address");
