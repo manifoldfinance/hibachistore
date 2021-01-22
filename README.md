@@ -1,9 +1,10 @@
-# `Hibachi Store`
+# Hibachi Store
 
-  </p>
-</p>
-<br />
-<br />
+[🍣 SushiSwap Governance Preliminary Discussion and Proposal](https://forum.sushiswapclassic.org/t/hibachi-store-lottery-based-arbitrage-payouts-for-incentivizing-lps-and-volume/2020)
+
+## Hibachi Store: Propposal for SushiSwap
+
+Contract source code has not been published in its entirety!
 
 ## Developer Tools 🛠️
 
@@ -11,27 +12,19 @@
 - [TypeChain](https://github.com/ethereum-ts/TypeChain)
 - [Openzeppelin Contracts](https://openzeppelin.com/contracts/)
 
-### Start
-
-Create `.infura` and `.secret` files. Install the dependencies:
-
-```bash
-$ yarn
-```
-
-### Tests
+### Tests 🔮
 
 ```bash
 $ yarn test
 ```
 
-### Coverage
+### Coverage 🧰
 
 ```bash
 $ yarn coverage
 ```
 
-### Deploying
+### Deploying 🛫
 
 Deploy to Kovan:
 
@@ -39,12 +32,12 @@ Deploy to Kovan:
 $ NETWORK=kovan yarn deploy
 ```
 
-## Verifying Contract Code
+## Verifying Contract Code 🎛
 
 ```bash
-$ NETWORK=kovan yarn run verify YourContractName
+$ NETWORK=rinkeby yarn run verify YourContractName
 ```
 
 ## License
 
-SPDX-License-Identifier: MIT/ISC
+SPDX-License-Identifier: GPL-3.0+
