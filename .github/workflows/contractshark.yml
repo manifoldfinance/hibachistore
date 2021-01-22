@@ -3,7 +3,7 @@
 #  v0.2.4
 name: contractshark
 
-on: ['pull_request']
+on: ["pull_request"]
 
 jobs:
   build:
@@ -12,9 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: ['12.x']
-        os: ['ubuntu-latest']
-
+        node: ["12.x"]
+        os: ["ubuntu-latest"]
 
     steps:
       - uses: actions/checkout@v2
@@ -31,8 +30,3 @@ jobs:
         run: |
           yarn test 
           yarn coverage
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-         github-token: ${{ secrets.GITHUB_TOKEN }}
