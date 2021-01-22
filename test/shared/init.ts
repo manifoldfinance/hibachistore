@@ -26,6 +26,8 @@ export async function initialiseDemo() {
   let WETHPartnerAddress = '0x0992D6471451dE667F58C8ef718b083f79934804'
   console.log('sit back and relax, this is gonna take a while')
   try {
+
+    // FIXME - TESTING 
     // console.log('deploying new token')
     // const WETHPartner = await deployContract(wallet, ERC20, [expandTo18Decimals(10000000000)])
     // console.log('created weth partner', WETHPartner.address)
