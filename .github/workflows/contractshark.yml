@@ -25,16 +25,18 @@ jobs:
       - name: yarn install and build
         run: |
           yarn install
-<<<<<<< HEAD
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-=======
           yarn compile
+          
       - name: yarn test and coverage
         run: |
           yarn test 
           yarn coverage
->>>>>>> 57993ef1ec6f9346f22ad42b0960b8ab147a88fd
+    
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+           yarn test 
+           yarn coverage
+
