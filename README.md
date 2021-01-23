@@ -12,33 +12,6 @@ Contract source code has not been published in its entirety!
 - [TypeChain](https://github.com/ethereum-ts/TypeChain)
 - [Openzeppelin Contracts](https://openzeppelin.com/contracts/)
 
-### Contracts
-
-```
-├── ArbitrageCalculation.sol
-├── HibachiArbitrage.sol
-├── Migrations.sol
-├── Randomness.sol
-├── interfaces
-│   ├── LinkTokenInterface.sol
-│   ├── hibachiStore.sol
-│   └── kingroll.sol
-├── libraries
-│   ├── DSMath.sol
-│   ├── UniswapV2Library.sol
-│   └── UniswapV2OracleLibrary.sol
-├── proxies
-│   └── lendingProxy.sol
-├── vendor
-│   └── SafeMath.sol
-└── vrf
-    ├── LinkTokenReceiver.sol
-    ├── VRF.sol
-    ├── VRFConsumerBase.sol
-    ├── VRFCoordinator.sol
-    └── VRFRequestIDBase.sol
-```
-
 ### Tests 🔮
 
 ```bash

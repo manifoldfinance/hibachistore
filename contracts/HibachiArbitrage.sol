@@ -175,7 +175,7 @@ contract HibachiArbitrage is IUniswapV2Callee {
                 msg.sender, // Buy hibachis for addresss
                 profit, // profit to split
                 false, // hibachis are brought by fee or profit (fee=>true)
-                true // to participate in lottery or not
+                true // to participate in kingroll or not
             );
         } else {
             leftProfit = profit;
@@ -229,7 +229,7 @@ contract HibachiArbitrage is IUniswapV2Callee {
                     token, // token address
                     numTokensObtained, // amount fee will be charged
                     true, // hibachis are brought by fee or profit(profit=>false)
-                    true // to participate in lottery or not
+                    true // to participate in kingroll or not
                 );
             }
         }
