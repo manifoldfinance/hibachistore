@@ -1,11 +1,6 @@
-/// SPDX-License-Identifier: SSPL-1.0
-/// @title King Roll Swap Interface
-/// @version 2021-01-23
-/// @description Hibachi Store KingRoll Interface
+pragma solidity ^0.6.2;
 
-pragma solidity >=0.6.12 <0.8.0;
-
-interface KingRollInterface {
+interface KingRollSwapInterface {
     function getEthToDaiProfit(uint256 totalProfit) external view returns (uint256 requiredAmt);
 
     function getTokenToDaiProfit(uint256 totalProfit) external view returns (uint256 requiredAmt);
