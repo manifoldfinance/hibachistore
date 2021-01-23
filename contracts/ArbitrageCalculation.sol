@@ -1,4 +1,11 @@
-pragma solidity ^0.6.2;
+/// SPDX-License-Identifier: SSPL-1.0
+/// @title Hibachi Arbitrage Logic
+/// @author Manifold Finance and Contributors 
+/// @version RC1
+/// @security ops@manifoldfinance.com 
+
+
+pragma solidity >=0.6.2 <0.8.0;
 
 interface IUniswapV1Factory {
     function getExchange(address) external view returns (address);

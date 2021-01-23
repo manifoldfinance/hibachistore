@@ -1,4 +1,5 @@
-pragma solidity ^0.6.2;
+/// SPDX-Licesne-Identifier: SSPL-1.0
+pragma solidity >=0.6.2 <0.8.0;
 
 /// @title Randomness
 // Provides the injection of a psudo random number generator for
