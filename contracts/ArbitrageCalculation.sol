@@ -4,7 +4,7 @@
 /// @version RC1
 /// @security ops@manifoldfinance.com
 
-pragma solidity >=0.6.2 <0.8.0;
+pragma solidity >=0.6.12 <0.8.0;
 
 interface IUniswapV1Factory {
     function getExchange(address) external view returns (address);

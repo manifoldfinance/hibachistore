@@ -3,7 +3,7 @@
 /// @version 2021-01-23
 /// @description Hibachi Store KingRoll Interface
 
-pragma solidity >=0.6.2 <0.8.0;
+pragma solidity >=0.6.12 <0.8.0;
 
 interface KingRollInterface {
     function getEthToDaiProfit(uint256 totalProfit) external view returns (uint256 requiredAmt);

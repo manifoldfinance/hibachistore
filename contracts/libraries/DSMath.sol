@@ -1,4 +1,4 @@
-pragma solidity ^0.6.2;
+pragma solidity ^0.6.12;
 
 contract DSMath {
     uint256 constant WAD = 10**18;

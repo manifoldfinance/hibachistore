@@ -1,4 +1,4 @@
-pragma solidity ^0.6.2;
+pragma solidity ^0.6.12;
 
 interface compoundTokenInterface {
     function allocateTo(address _owner, uint256 value) external;

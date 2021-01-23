@@ -1,4 +1,4 @@
-pragma solidity ^0.6.2;
+pragma solidity ^0.6.12;
 
 interface KingRollInterface {
     function getEthToDaiProfit(uint256 totalProfit) external view returns (uint256 requiredAmt);

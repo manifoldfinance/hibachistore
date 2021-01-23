@@ -3,7 +3,7 @@
 /// @version 2021-01-23
 /// @description: Hibachi Store Governance Layer
 
-pragma solidity >=0.6.2 <0.8.0;
+pragma solidity >=0.6.12 <0.8.0;
 
 import { DSMath } from "./libraries/DSMath.sol";
 

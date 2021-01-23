@@ -1,4 +1,4 @@
-pragma solidity ^0.6.2;
+pragma solidity ^0.6.12;
 
 abstract contract LinkTokenReceiver {
     bytes4 private constant ORACLE_REQUEST_SELECTOR = 0x40429946;

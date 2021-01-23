@@ -1,4 +1,4 @@
-pragma solidity ^0.6.2;
+pragma solidity ^0.6.12;
 
 interface CTokenInterface {
     function mint(uint256 mintAmount) external returns (uint256);
