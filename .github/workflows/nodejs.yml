@@ -1,9 +1,6 @@
-# contractshark workflow pipeline
-#  spdx-license-identifier: ISC
-#  v0.2.4
-name: contractshark
+name: nodejs
 
-on: ["pull_request"]
+on: ["push"]
 
 jobs:
   build:
@@ -24,19 +21,11 @@ jobs:
           check-latest: true
       - name: yarn install and build
         run: |
-          yarn install
-          yarn compile
+          npm install
+          npm run-script compile
           
       - name: yarn test and coverage
         run: |
-          yarn test 
-          yarn coverage
-    
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          run: |
-           yarn test 
-           yarn coverage
+          npm run-script test 
+          npm run-script coverage
 
