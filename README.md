@@ -12,7 +12,7 @@ Contract source code has not been published in its entirety!
 - [TypeChain](https://github.com/ethereum-ts/TypeChain)
 - [Openzeppelin Contracts](https://openzeppelin.com/contracts/)
 
-### Contracts 
+### Contracts
 
 ```
 ├── ArbitrageCalculation.sol

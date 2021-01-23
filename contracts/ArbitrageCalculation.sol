@@ -1,9 +1,8 @@
 /// SPDX-License-Identifier: SSPL-1.0
 /// @title Hibachi Arbitrage Logic
-/// @author Manifold Finance and Contributors 
+/// @author Manifold Finance and Contributors
 /// @version RC1
-/// @security ops@manifoldfinance.com 
-
+/// @security ops@manifoldfinance.com
 
 pragma solidity >=0.6.2 <0.8.0;
 
