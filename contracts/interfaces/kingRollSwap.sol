@@ -1,7 +1,7 @@
 /// SPDX-License-Identifier: SSPL-1.0
-/// @title King Roll Swap Interface 
+/// @title King Roll Swap Interface
 /// @version 2021-01-23
-/// @description Hibachi Store KingRoll Interface 
+/// @description Hibachi Store KingRoll Interface
 
 pragma solidity >=0.6.2 <0.8.0;
 

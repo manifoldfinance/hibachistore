@@ -2,7 +2,6 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
-
 #### [0.6.0](https://github.com/manifoldfinance/hibachistore/compare/0.5.1...0.6.0)
 
 > 23 January 2021

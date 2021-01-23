@@ -59,13 +59,13 @@ contract Helpers is DSMath {
 
     function getEthToDaiProfit(uint256 totalProfit) public view returns (uint256 requiredAmt) {
         uint256 hibachiPrice = governance.hibachiPrice();
-        uint256 candyProfit = (totalProfit * 2) / 10;
+        uint256 hibachiProfit = (totalProfit * 2) / 10;
         address[] memory paths = new address[](2);
         paths[0] = router01.WETH();
         paths[1] = address(stableToken);
-        uint256[] memory amts = router01.getAmountsOut(candyProfit, paths);
+        uint256[] memory amts = router01.getAmountsOut(hibachiProfit, paths);
 
-        require(amts[1] >= hibachiPrice, "CS: Total amount was less than candy price");
+        require(amts[1] >= hibachiPrice, "CS: Total amount was less than hibachi price");
         uint256 extraAmount = mod(amts[1], hibachiPrice);
         requiredAmt = extraAmount > ((hibachiPrice * 6) / 10)
             ? amts[1] + (hibachiPrice - extraAmount)
@@ -73,30 +73,30 @@ contract Helpers is DSMath {
     }
 
     function getEthToDaiFee(uint256 totalAmt) public view returns (uint256 requiredAmt) {
-        uint256 candyFee = governance.fee();
-        uint256 candyProfit = wmul(totalAmt, candyFee);
+        uint256 hibachiFee = governance.fee();
+        uint256 hibachiProfit = wmul(totalAmt, hibachiFee);
         uint256 hibachiPrice = governance.hibachiPrice();
         address[] memory paths = new address[](2);
         paths[0] = router01.WETH();
         paths[1] = address(stableToken);
-        uint256[] memory amts = router01.getAmountsOut(candyProfit, paths);
+        uint256[] memory amts = router01.getAmountsOut(hibachiProfit, paths);
 
-        require(amts[1] >= hibachiPrice, "CS: Total amount was less than candy price");
+        require(amts[1] >= hibachiPrice, "CS: Total amount was less than hibachi price");
         uint256 extraAmount = mod(amts[1], hibachiPrice);
         requiredAmt = extraAmount > ((hibachiPrice * 8) / 10)
-            ? amts[1] + (candyFee - extraAmount)
+            ? amts[1] + (hibachiFee - extraAmount)
             : amts[1] - extraAmount;
     }
 
     function getTokenToDaiProfit(address token, uint256 totalProfit) public view returns (uint256 requiredAmt) {
         uint256 hibachiPrice = governance.hibachiPrice();
-        uint256 candyProfit = (totalProfit * 2) / 10;
+        uint256 hibachiProfit = (totalProfit * 2) / 10;
         address[] memory paths = new address[](2);
         paths[0] = token;
         paths[1] = address(stableToken);
-        uint256[] memory amts = router01.getAmountsOut(candyProfit, paths);
+        uint256[] memory amts = router01.getAmountsOut(hibachiProfit, paths);
 
-        require(amts[1] >= hibachiPrice, "CS: Total profit was less than candy price");
+        require(amts[1] >= hibachiPrice, "CS: Total profit was less than hibachi price");
         uint256 extraAmount = mod(amts[1], hibachiPrice);
         requiredAmt = extraAmount > ((hibachiPrice * 6) / 10)
             ? amts[1] + (hibachiPrice - extraAmount)
@@ -104,15 +104,15 @@ contract Helpers is DSMath {
     }
 
     function getTokenToDaiFee(address token, uint256 totalAmt) public view returns (uint256 requiredAmt) {
-        uint256 candyFee = governance.fee();
-        uint256 candyProfit = wmul(totalAmt, candyFee);
+        uint256 hibachiFee = governance.fee();
+        uint256 hibachiProfit = wmul(totalAmt, hibachiFee);
         uint256 hibachiPrice = governance.hibachiPrice();
         address[] memory paths = new address[](2);
         paths[0] = token;
         paths[1] = address(stableToken);
-        uint256[] memory amts = router01.getAmountsOut(candyProfit, paths);
+        uint256[] memory amts = router01.getAmountsOut(hibachiProfit, paths);
 
-        require(amts[1] >= hibachiPrice, "CS: Total amount was less than candy price");
+        require(amts[1] >= hibachiPrice, "CS: Total amount was less than hibachi price");
         uint256 extraAmount = mod(amts[1], hibachiPrice);
         requiredAmt = extraAmount > ((hibachiPrice * 8) / 10)
             ? amts[1] + (hibachiPrice - extraAmount)
@@ -130,7 +130,7 @@ contract ArbsResolver is Helpers {
 
     function swapEthToDai(
         address payable user,
-        address candyFor,
+        address hibachiFor,
         uint256 totalAmt,
         bool isFee,
         bool isIn
@@ -152,7 +152,7 @@ contract ArbsResolver is Helpers {
         hibachis = HibachiStoreInterface(governance.hibachiStore()).buyHibachi(
             address(stableToken),
             daiAmt,
-            candyFor, //TODO - have to set `to` address,
+            hibachiFor, //TODO - have to set `to` address,
             isIn
         );
         uint256 usedAmt = sub(intialBal, finialBal);
@@ -167,7 +167,7 @@ contract ArbsResolver is Helpers {
 
     function swapTokenToDai(
         address user,
-        address candyFor,
+        address hibachiFor,
         address token,
         uint256 totalAmt,
         bool isFee,
@@ -192,7 +192,7 @@ contract ArbsResolver is Helpers {
         hibachis = HibachiStoreInterface(governance.hibachiStore()).buyHibachi(
             address(stableToken),
             daiAmt,
-            candyFor, //TODO - have to set `to` address,
+            hibachiFor, //TODO - have to set `to` address,
             isIn
         );
         uint256 usedAmt = sub(intialBal, finialBal);

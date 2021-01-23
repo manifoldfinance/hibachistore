@@ -1,13 +1,14 @@
-pragma solidity >=0.5.0;
+/// SPDX-License-Identifier: SSPL-1.0
+/// @title Governance Interface for MultiSig
+/// @version 2021-01-23
+/// @description: Interface for Governance Contract
+
+pragma solidity >=0.6.2 <0.8.0;
 
 interface GovernanceInterface {
     function lendingProxy() external view returns (address);
 
-    function kingRollSwap() external view returns (address);
-
-    function hibachiStoreArbs() external view returns (address);
-
-    function kingRoll() external view returns (address);
+    function kingrollSwap() external view returns (address);
 
     function hibachiStoreArbs() external view returns (address);
 
@@ -15,7 +16,7 @@ interface GovernanceInterface {
 
     function randomness() external view returns (address);
 
-    function kingRollDuration() external view returns (uint256);
+    function kingrollDuration() external view returns (uint256);
 
     function admin() external view returns (address);
 

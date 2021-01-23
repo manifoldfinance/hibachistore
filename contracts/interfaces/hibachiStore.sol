@@ -13,9 +13,9 @@ interface HibachiStoreInterface {
         uint256 userAmount; // token amount collected from fee/arbs profit from swapping.
         uint256 sponsorAmount; // token amount deposited by sponsor.
     }
-    
+
     // @dev KingRoll Data
-    // Trying to keep the naming consistent, however for the kingroll 
+    // Trying to keep the naming consistent, however for the kingroll
     // logic, we favor understandability over procedure
     struct LotteryData {
         address lendingProxy; // Proxy contract for interaction with Lending protocols.
@@ -78,7 +78,7 @@ interface HibachiStoreInterface {
     // Sponsor balance for a specific kingroll.
     function sponsorBalance(uint256 kingrollId, address sponsor) external view returns (SponsorData memory);
 
-    // To buy candy.(Can only be called by arbs contract)
+    // To buy hibachi.(Can only be called by arbs contract)
     function buyHibachi(
         address token,
         uint256 amt,

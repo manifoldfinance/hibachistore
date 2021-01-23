@@ -23,9 +23,8 @@ jobs:
         run: |
           npm install
           npm run-script compile
-          
+
       - name: yarn test and coverage
         run: |
           npm run-script test 
           npm run-script coverage
-

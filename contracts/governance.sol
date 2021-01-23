@@ -1,4 +1,9 @@
-pragma solidity ^0.6.2;
+/// SPDX-License-Identifier: SSPL-1.0
+/// @title Governance Component for Hibachi Store
+/// @version 2021-01-23
+/// @description: Hibachi Store Governance Layer
+
+pragma solidity >=0.6.2 <0.8.0;
 
 import { DSMath } from "./libraries/DSMath.sol";
 
@@ -27,7 +32,8 @@ contract GovernanceData is DSMath {
         fee = _fee;
     }
 
-    function changeCandyPrice(uint256 _price) external isAdmin {
+    /// @dev this enables governane to control the price of Hibachi
+    function changeHibachiPrice(uint256 _price) external isAdmin {
         require(_price < 1 * WAD, "governance/over-price"); // 1$ Max Price.
         hibachiPrice = _price;
     }
