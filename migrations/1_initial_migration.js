@@ -1,7 +1,5 @@
-const Migrations = artifacts.require("./Migrations.sol");
-const Soliditemp = artifacts.require("./Soliditemp.sol");
+const Migrations = artifacts.require("Migrations");
 
 module.exports = function (deployer) {
   deployer.deploy(Migrations);
-  deployer.deploy(Soliditemp);
 };
