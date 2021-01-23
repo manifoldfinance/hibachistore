@@ -38,15 +38,20 @@
     "mocha-lcov-reporter": "^1.3.0",
     "prettier": "^2.2.1",
     "prettier-plugin-solidity": "^1.0.0-beta.3",
+    "solhint": "^3.3.2",
     "solidity-coverage": "^0.7.5",
     "solium": "^1.2.5",
-    "truffle": "^5.1.24"
+    "truffle": "^5.1.24",
+    "ts-node": "^9.1.1"
   },
   "scripts": {
     "cshark": "scripts/test.sh",
     "coverage": "scripts/coverage.sh && cat coverage/lcov.info | coveralls",
     "compile": "waffle .waffle.json",
     "test": "mocha",
+    "hardhat:test": "npx hardhat test --deploy-fixture",
+    "test:coverage": "node --max-old-space-size=4096 ./node_modules/.bin/hardhat coverage",
+    "test:gas": "REPORT_GAS=true yarn test",
     "lint:js": "eslint .",
     "lint:js:fix": "eslint . --fix",
     "lint:sol": "solium -d .",
