@@ -1,13 +1,12 @@
-pragma solidity =0.6.6;
+pragma solidity >=0.6.11 <0.8.0;
 
-import './libraries/SafeMath.sol';
-
+import "./libraries/SafeMath.sol";
 
 contract ERC20 {
     using SafeMath for uint256;
 
-    string public constant name = 'Test Token';
-    string public constant symbol = 'TT';
+    string public constant name = "Test Token";
+    string public constant symbol = "TT";
     uint8 public constant decimals = 18;
     uint256 public totalSupply;
     mapping(address => uint256) public balanceOf;
@@ -28,9 +27,9 @@ contract ERC20 {
         }
         DOMAIN_SEPARATOR = keccak256(
             abi.encode(
-                keccak256('EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)'),
+                keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"),
                 keccak256(bytes(name)),
-                keccak256(bytes('1')),
+                keccak256(bytes("1")),
                 chainId,
                 address(this)
             )
@@ -100,16 +99,17 @@ contract ERC20 {
         bytes32 r,
         bytes32 s
     ) external {
-        require(deadline >= block.timestamp, 'EXPIRED');
-        bytes32 digest = keccak256(
-            abi.encodePacked(
-                '\x19\x01',
-                DOMAIN_SEPARATOR,
-                keccak256(abi.encode(PERMIT_TYPEHASH, owner, spender, value, nonces[owner]++, deadline))
-            )
-        );
+        require(deadline >= block.timestamp, "EXPIRED");
+        bytes32 digest =
+            keccak256(
+                abi.encodePacked(
+                    "\x19\x01",
+                    DOMAIN_SEPARATOR,
+                    keccak256(abi.encode(PERMIT_TYPEHASH, owner, spender, value, nonces[owner]++, deadline))
+                )
+            );
         address recoveredAddress = ecrecover(digest, v, r, s);
-        require(recoveredAddress != address(0) && recoveredAddress == owner, 'INVALID_SIGNATURE');
+        require(recoveredAddress != address(0) && recoveredAddress == owner, "INVALID_SIGNATURE");
         _approve(owner, spender, value);
     }
 }
