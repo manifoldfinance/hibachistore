@@ -1,4 +1,4 @@
-pragma solidity >=0.6.6 <0.7.0;
+pragma solidity >=>0.6.12 <0.7.0;
 
 import { IUniswapV2Callee } from "@uniswap/v2-core/contracts/interfaces/IUniswapV2Callee.sol";
 import { IUniswapV2Pair } from "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol";
